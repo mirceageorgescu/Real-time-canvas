@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -36,9 +35,6 @@ app.get('/', routes.index);
 
 app.listen(3000);
 console.log('Listening %d in %s mode', app.address().port, app.settings.env);
-
-var hash = crypto.createHash('md5').update('mircea.georgescu@gmail.com').digest("hex");
-console.log(hash);
 
 io.sockets.on('connection', function(socket) {
     socket.broadcast.emit('user connected');
